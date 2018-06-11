@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        h1{
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        table{
+            border: solid 6px gray;
+            border-radius: 6px;
+        }
+        th{
+            color: blueviolet;
+            background-color: lightgray;
+        }
+        td{
+            color: darkslategray;
+        }
+        form{
+            color:blueviolet;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        input{
+            border-radius: 4px;
+        }
+        #button{
+            background-color: lightgreen;
+        }
+    </style>
+    <title>PyMySQL</title>
+</head>
+<body>
+    <h1>These are all my friends!</h1>
+    <table>
+        <tr>
+            <th>First Name:</th>
+            <th>Last Name:</th>
+            <th>Occupation:</th>
+        </tr>
+        {% for each in friends %}
+        <tr>
+            <td>{{ each['first_name'] }}</td>
+            <td>{{ each['last_name'] }}</td>
+            <td>{{ each['occupation'] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <table>
+    <h1>Add a friend</h1>
+    <form action="/create_friend", method="POST">
+        First name:<input type="text" name="first_name" value="">
+        <br>
+        Last name:<input type="text" name="last_name" value="">
+        <br>
+        Occupation:<input type="text" name="occupation" value="">
+        <br>
+        <br>
+        <input id="button" type="submit" value="Add">
+      </form> 
+</body>
+</html>
